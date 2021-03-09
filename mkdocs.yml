@@ -1,0 +1,13 @@
+site_name: Transport Scotland Data Standards
+
+theme:
+  name: material
+
+markdown_extensions:
+  - abbr
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.snippets
+
+extra_css:
+  - stylesheets/palette.css
