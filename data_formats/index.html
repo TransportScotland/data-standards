@@ -244,11 +244,44 @@
     Incidents
   </a>
   
+    <nav class="md-nav" aria-label="Incidents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-for-incidents" class="md-nav__link">
+    Required Fields for Incidents
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#failures-gaps" class="md-nav__link">
-    Failures / Gaps
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-for-errors" class="md-nav__link">
+    Required Fields for Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorising-incidents-and-errors" class="md-nav__link">
+    Categorising Incidents and Errors
   </a>
   
 </li>
@@ -382,11 +415,44 @@
     Incidents
   </a>
   
+    <nav class="md-nav" aria-label="Incidents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-for-incidents" class="md-nav__link">
+    Required Fields for Incidents
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#failures-gaps" class="md-nav__link">
-    Failures / Gaps
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+    <nav class="md-nav" aria-label="Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields-for-errors" class="md-nav__link">
+    Required Fields for Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#categorising-incidents-and-errors" class="md-nav__link">
+    Categorising Incidents and Errors
   </a>
   
 </li>
@@ -458,36 +524,138 @@
 <td>The survey company responsible for data collection.</td>
 <td>Tyrell Corporation</td>
 </tr>
+<tr>
+<td>incidents</td>
+<td><em>See below</em></td>
+<td><em>See below</em></td>
+</tr>
+<tr>
+<td>errors</td>
+<td><em>See below</em></td>
+<td><em>See below</em></td>
+</tr>
 </tbody>
 </table>
 <h4 id="incidents">Incidents</h4>
 <p>For the benefit of future users, any incidents occurring at or near the survey location which may have a material affect on the results must be included as part of the metadata for any and all relevant files.</p>
-<h4 id="failures-gaps">Failures / Gaps</h4>
-<p>Any instances of failures in automated data collection or gaps in surveys must be included as part of the metadata for any and all relevant files.</p>
+<p>Incidents may include (but are not limited to):</p>
+<ul>
+<li>diversions</li>
+<li>accidents</li>
+<li>roadworks</li>
+</ul>
+<h5 id="required-fields-for-incidents">Required Fields for Incidents</h5>
+<p>Any incidents should be provided as a list of items, with each item containing the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>The date and time at which the incident will have first started to affect survey results, in <code>YYYY-MM-DD HH:MM</code> format</td>
+<td>2019-11-01 07:55</td>
+</tr>
+<tr>
+<td>end</td>
+<td>The date and time from which the incident will no longer survey results, in <code>YYYY-MM-DD HH:MM</code> format</td>
+<td>2019-11-01 08:30</td>
+</tr>
+<tr>
+<td>description</td>
+<td>A description of the incident</td>
+<td>Police road closure</td>
+</tr>
+</tbody>
+</table>
+<p>Should no incidents occur, <strong>this key should still be included within the metadata, with an empty array as its corresponding value.</strong></p>
+<h4 id="errors">Errors</h4>
+<p>Any instances of failures in automated data collection or gaps in surveys must be included as part of the metadata for any and all relevant files, with both broadly fitting into the category of "errors".</p>
+<p>Errors could include:</p>
+<ul>
+<li>malfunctioning equipment</li>
+<li>obstructed or incomplete (e.g. for queue surveys) views for video footage</li>
+</ul>
+<h5 id="required-fields-for-errors">Required Fields for Errors</h5>
+<p>Any incidents should be provided as a list of items, with each item containing the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>The date and time at which the error will have first started to affect survey results, in <code>YYYY-MM-DD HH:MM</code> format</td>
+<td>2019-11-01 07:55</td>
+</tr>
+<tr>
+<td>end</td>
+<td>The date and time from which the error will no longer survey results, in <code>YYYY-MM-DD HH:MM</code> format</td>
+<td>2019-11-01 08:30</td>
+</tr>
+<tr>
+<td>description</td>
+<td>A description of the incident</td>
+<td>Camera obstructed by owl</td>
+</tr>
+</tbody>
+</table>
+<p>As with incidents, should no errors occur, <strong>this key should still be included within the metadata, with an empty array as its corresponding value.</strong></p>
+<h4 id="categorising-incidents-and-errors">Categorising Incidents and Errors</h4>
+<p>The definitions of "incidents" and "errors" are broadly similar. As a rule of thumb, something should be classified as an incident if the actual <em>collection</em> of data has not been impacted but the data itself may have been. An error, on the other hand, broadly refers to anything that has prevented collection of data.</p>
 <h4 id="example">Example</h4>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">No incidents / errors</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;survey_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ATC&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;survey_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPR&quot;</span><span class="p">,</span>
         <span class="nt">&quot;collected_by&quot;</span><span class="p">:</span> <span class="s2">&quot;Tyrell Corporation&quot;</span><span class="p">,</span>
         <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-08&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;period_start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 07:00&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;period_end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 07:15&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;vehicle_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Car&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">30</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;period_start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 07:15&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;period_end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 07:30&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;vehicle_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Car&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">34</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+        <span class="nt">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-08&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;incidents&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">With incidents / errors</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;survey_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPR&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;collected_by&quot;</span><span class="p">:</span> <span class="s2">&quot;Tyrell Corporation&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-08&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;incidents&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 07:55&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 08:30&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Police road closure&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 21:15&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01 23:45&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Camera obstructed by owl&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-02 06:00&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-02 06:50&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;View obscured by excessive rain&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
                 
                   
                 
