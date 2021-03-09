@@ -8,6 +8,7 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.snippets
+  - pymdownx.tabbed
 
 extra_css:
   - stylesheets/palette.css
