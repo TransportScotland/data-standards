@@ -2,6 +2,8 @@ site_name: Transport Scotland Data Standards
 
 theme:
   name: material
+  icon:
+    logo: material/clipboard-text
 
 markdown_extensions:
   - abbr
