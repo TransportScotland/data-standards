@@ -14,12 +14,19 @@ Data should be provided at intervals not exceeding one hour in length, with 15 m
 
 ### Metadata
 - Vehicle classification descriptions
+- Site location
+    - Detailed description (road name and classification, what junctions is it between)
+    - Coordinates
+- Direction descriptions - e.g. "towards Edinburgh"
 
 ### Data
 - Start time/date
 - End time/data
 - Vehicle class
 - Count
+- Direction
+    - NB, SB, EB or WB
+    - Consider in the context of the route
 
 ## Basic Checks
 
