@@ -13,11 +13,97 @@ Data should be provided at intervals not exceeding one hour in length, with 15 m
 ## Required Fields
 
 ### Metadata
-- Vehicle classification descriptions
-- Site location
-    - Detailed description (road name and classification, what junctions is it between)
-    - Coordinates
-- Direction descriptions - e.g. "towards Edinburgh"
+
+In addition to the mandatory fields detailed in the [Data Formats](../data_formats.md) page, there are three additional metadata fields required for every ATC site, each of which is detailed in the following sections.
+
+| Field           | Description                                                                                       | Example     |
+|-----------------|---------------------------------------------------------------------------------------------------|-------------|
+| location        | A location object, with specified keys.                                                           | _See below_ |
+| directions      | An array containing the directions used in the count data, with specified keys.                   | _See below_ |
+| classifications | An array containing the vehicle type classifications used in the count data, with specified keys. | _See below_ |
+
+#### Location
+
+The location object for each ATC site should be sufficiently detailed for it to be accurately located either through mapping software or from its description alone. This information should provided according to the _actual location used_ for the installation of the counter, in case this varies from the brief for any reason.
+
+Coordinates should be provided in British National Grid (EPSG:27700) form.
+
+| Field       | Description                                          | Example                                                |
+|-------------|------------------------------------------------------|--------------------------------------------------------|
+| description | Text-based description of the counter location.      | Port Dundas Road, 50m South of junction with Milton St |
+| eastings    | x-coordinate of the counter location _as installed_. | 259016                                                 |
+| northings   | y-coordinate of the counter location _as installed_. | 666122                                                 |
+
+##### Example
+```json
+{
+    "metadata": {
+        "location": {
+            "description": "Port Dundas Road, 50m South of junction with Milton St",
+            "eastings": 259016,
+            "northings": 666122
+        }
+    }
+}
+```
+
+#### Directions
+
+Each direction used in the data should be detailed within the metadata, with both the exact encoding used in the data _and_ a description of the direction to validate this.
+
+| Field       | Description                             | Example               |
+|-------------|-----------------------------------------|-----------------------|
+| direction   | Direction as used in the data.          | NB                    |
+| description | Description of the direction of travel. | Towards Milton Street |
+
+##### Example
+```json
+{
+    "metadata": {
+        "directions": [
+            {
+                "direction": "NB",
+                "description": "Towards Milton Street"
+            },
+            {
+                "direction": "SB",
+                "description": "Towards Cowcaddens Road"
+            }
+        ]
+    }
+}
+```
+
+#### Classifications
+
+The majority of ATC surveys require categorised vehicle counts. To avoid ambiguity, the categorisation methods used by the counter should be detailed as clearly as possible within this key. 
+
+| Field       | Description                        | Example |
+|-------------|------------------------------------|---------|
+| class       | Vehicle class as used in the data. | 1       |
+| description | Description of the class.          | Car     |
+
+##### Example
+```json
+{
+    "metadata": {
+        "classifications": [
+            {
+                "class": 1,
+                "description": "Car"
+            },
+            {
+                "class": 2,
+                "description": "LGV"
+            },
+            {
+                "class": 3,
+                "description": "HGV"
+            }
+        ]
+    }
+}
+```
 
 ### Data
 - Start time/date
