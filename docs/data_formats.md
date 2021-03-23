@@ -8,6 +8,8 @@ The main storage format for survey data should be JSON. This format allows for s
 
 As JSON is less "human readable", in certain circumstances it may be beneficial to provide the data in Excel or CSV formats. If this is the case, this information should only ever be provided **in addition to** the JSON files, with clear information provided to the recipient that the JSON files are the primary format.
 
+_Converters to be provided for switching between JSON and CSV / Excel formats_
+
 ## Basic Structure and Mandatory Fields
 
 The exact structure will vary according to the type of survey undertaken, however some fields are required across all survey types.
@@ -17,6 +19,7 @@ The exact structure will vary according to the type of survey undertaken, howeve
 
 | Field        | Description                                                                   | Example            |
 |--------------|-------------------------------------------------------------------------------|--------------------|
+| task_order   | The unique identifier for the task order the data relates to.                 | B26354             |
 | survey_type  | The type of survey data contained in this file. _Canonical list coming soon_. | ATC         |
 | start_date   | The start date of the survey covered by this file, in `YYYY-MM-DD` format.    | 2019-11-01         |
 | end_date     | The end date of the survey covered by this file, in `YYYY-MM-DD` format.      | 2019-11-08         |
@@ -79,6 +82,7 @@ The definitions of "incidents" and "errors" are broadly similar. As a rule of th
     ```json
     {
         "metadata": {
+            "task_order": "B26354",
             "survey_type": "ANPR",
             "collected_by": "Tyrell Corporation",
             "start_date": "2019-11-01",
@@ -94,6 +98,7 @@ The definitions of "incidents" and "errors" are broadly similar. As a rule of th
     ```json
     {
         "metadata": {
+            "task_order": "B26354",
             "survey_type": "ANPR",
             "collected_by": "Tyrell Corporation",
             "start_date": "2019-11-01",
@@ -120,3 +125,5 @@ The definitions of "incidents" and "errors" are broadly similar. As a rule of th
         }
     }
     ```
+
+--8<-- "includes/abbreviations.md"
