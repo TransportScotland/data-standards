@@ -14,10 +14,11 @@ Data should be provided through use of a separate JSON file for each counter use
 
 ### Metadata
 
-In addition to the mandatory fields detailed in the [Data Formats](../data_formats.md) page, there are three additional metadata fields required for every ATC site, each of which is detailed in the following sections.
+In addition to the mandatory fields detailed in the [Data Formats](../data_formats.md) page, there are four additional metadata fields required for every ATC site, each of which is detailed in the following sections.
 
 | Field           | Description                                                                                       | Example     |
 |-----------------|---------------------------------------------------------------------------------------------------|-------------|
+| site_id         | A unique identifier for this site within the task order                                           | ATC1        |
 | location        | A location object, with specified keys.                                                           | _See below_ |
 | directions      | An array containing the directions used in the count data, with specified keys.                   | _See below_ |
 | classifications | An array containing the vehicle type classifications used in the count data, with specified keys. | _See below_ |
@@ -151,6 +152,7 @@ In most circumstances vehicle types relating to "cars" should provide the majori
         "collected_by": "Tyrell Corporation",
         "incidents": [],
         "errors": [],
+        "site_id": "ATC1",
         "location": {
             "description": "Port Dundas Road, 50m South of junction with Milton St",
             "eastings": 259016,
