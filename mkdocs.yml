@@ -11,6 +11,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.snippets
   - pymdownx.tabbed
+  - toc:
+      permalink: true
 
 extra_css:
   - stylesheets/palette.css

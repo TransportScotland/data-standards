@@ -106,13 +106,27 @@ The majority of ATC surveys require categorised vehicle counts. To avoid ambigui
 ```
 
 ### Data
-- Start time/date
-- End time/data
-- Vehicle class
-- Count
-- Direction
-    - NB, SB, EB or WB
-    - Consider in the context of the route
+
+Count data should be provided as an array with one entry per time period. Within this, the count should be specified for each direction and vehicle class.
+
+| Field  | Description                                                                               | Example          |
+|--------|-------------------------------------------------------------------------------------------|------------------|
+| start  | The start of the time period being reported by this record, in `YYYY-MM-DD HH:MM` format. | 2019-11-01 07:00 |
+| end    | The end of the time period being reported by this record, in `YYYY-MM-DD HH:MM` format.   | 2019-11-01 08:00 |
+| counts | An array containing the observed counts, with specified keys.                             | _See below_      |
+
+#### Counts
+
+The reported counts include descriptions which should directly match up to the values as provided in the metadata.
+
+It is also critical that **observed counts of zero are included, and "unobserved" periods are not recorded as zero**. The recipient of the data must be able to distinguish between gaps in the data (e.g. due to malfunctioning equipment) and actual periods with no observations.
+
+| Field     | Description                                                                                 | Example |
+|-----------|---------------------------------------------------------------------------------------------|---------|
+| direction | Direction of travel. Must match up with directions specified in the [metadata](#directions) | NB      |
+| class     | Vehicle class. Must match up with directions specified in the [metadata](#classifications)  | 1       |
+| count     | Number of vehicles recorded under the given parameters.                                     | 15      |
+
 
 ## Basic Checks
 
