@@ -139,4 +139,122 @@ Vehicle counts, particularly in locations near to populous areas, can be very "t
 ### Vehicle type proportions
 In most circumstances vehicle types relating to "cars" should provide the majority of flow at any given location. This is most prevalent during the daytime hours - at a minimum, any instance of "non-car" vehicle counts exceeding "car" vehicle counts for a one-hour period between 7am and 7pm (inclusive) should be investigated.
 
+## Example Structure
+
+```json
+{
+    "metadata": {
+        "survey_type": "ATC",
+        "start_date": "2019-11-01",
+        "end_date": "2019-11-01",
+        "collected_by": "Tyrell Corporation",
+        "incidents": [],
+        "errors": [],
+        "location": {
+            "description": "Port Dundas Road, 50m South of junction with Milton St",
+            "eastings": 259016,
+            "northings": 666122
+        },
+        "directions": [
+            {
+                "direction": "NB",
+                "description": "Towards Milton Street"
+            },
+            {
+                "direction": "SB",
+                "description": "Towards Cowcaddens Road"
+            }
+        ],
+        "classifications": [
+            {
+                "class": 1,
+                "description": "Car"
+            },
+            {
+                "class": 2,
+                "description": "LGV"
+            },
+            {
+                "class": 3,
+                "description": "HGV"
+            }
+        ],
+    },
+    "data": [
+        {
+            "start": "2019-11-01 07:00",
+            "end": "2019-11-01 08:00",
+            "counts": [
+                {
+                    "direction": "NB",
+                    "class": 1,
+                    "count": 10
+                },
+                {
+                    "direction": "NB",
+                    "class": 2,
+                    "count": 8
+                },
+                {
+                    "direction": "NB",
+                    "class": 3,
+                    "count": 5
+                },
+                {
+                    "direction": "SB",
+                    "class": 1,
+                    "count": 8
+                },
+                {
+                    "direction": "SB",
+                    "class": 2,
+                    "count": 4
+                },
+                {
+                    "direction": "SB",
+                    "class": 3,
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "start": "2019-11-01 08:00",
+            "end": "2019-11-01 09:00",
+            "counts": [
+                {
+                    "direction": "NB",
+                    "class": 1,
+                    "count": 10
+                },
+                {
+                    "direction": "NB",
+                    "class": 2,
+                    "count": 8
+                },
+                {
+                    "direction": "NB",
+                    "class": 3,
+                    "count": 5
+                },
+                {
+                    "direction": "SB",
+                    "class": 1,
+                    "count": 8
+                },
+                {
+                    "direction": "SB",
+                    "class": 2,
+                    "count": 4
+                },
+                {
+                    "direction": "SB",
+                    "class": 3,
+                    "count": 2
+                }
+            ]
+        }
+    ]
+}
+```
+
 --8<-- "includes/abbreviations.md"
