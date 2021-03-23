@@ -492,6 +492,7 @@
                 <h2 id="file-types">File Types<a class="headerlink" href="#file-types" title="Permanent link">&para;</a></h2>
 <p>The main storage format for survey data should be JSON. This format allows for storage of metadata directly alongside the survey data itself, ensuring that this information is not lost, and is easily read by machines.</p>
 <p>As JSON is less "human readable", in certain circumstances it may be beneficial to provide the data in Excel or CSV formats. If this is the case, this information should only ever be provided <strong>in addition to</strong> the JSON files, with clear information provided to the recipient that the JSON files are the primary format.</p>
+<p><em>Converters to be provided for switching between JSON and CSV / Excel formats</em></p>
 <h2 id="basic-structure-and-mandatory-fields">Basic Structure and Mandatory Fields<a class="headerlink" href="#basic-structure-and-mandatory-fields" title="Permanent link">&para;</a></h2>
 <p>The exact structure will vary according to the type of survey undertaken, however some fields are required across all survey types.</p>
 <h3 id="mandatory-metadata-fields">Mandatory Metadata Fields<a class="headerlink" href="#mandatory-metadata-fields" title="Permanent link">&para;</a></h3>
@@ -505,9 +506,14 @@
 </thead>
 <tbody>
 <tr>
+<td>task_order</td>
+<td>The unique identifier for the task order the data relates to.</td>
+<td>B26354</td>
+</tr>
+<tr>
 <td>survey_type</td>
 <td>The type of survey data contained in this file. <em>Canonical list coming soon</em>.</td>
-<td>ATC</td>
+<td><abbr title="Automatic Traffic Count">ATC</abbr></td>
 </tr>
 <tr>
 <td>start_date</td>
@@ -615,6 +621,7 @@
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">No incidents / errors</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;task_order&quot;</span><span class="p">:</span> <span class="s2">&quot;B26354&quot;</span><span class="p">,</span>
         <span class="nt">&quot;survey_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPR&quot;</span><span class="p">,</span>
         <span class="nt">&quot;collected_by&quot;</span><span class="p">:</span> <span class="s2">&quot;Tyrell Corporation&quot;</span><span class="p">,</span>
         <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01&quot;</span><span class="p">,</span>
@@ -628,6 +635,7 @@
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">With incidents / errors</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;task_order&quot;</span><span class="p">:</span> <span class="s2">&quot;B26354&quot;</span><span class="p">,</span>
         <span class="nt">&quot;survey_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPR&quot;</span><span class="p">,</span>
         <span class="nt">&quot;collected_by&quot;</span><span class="p">:</span> <span class="s2">&quot;Tyrell Corporation&quot;</span><span class="p">,</span>
         <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01&quot;</span><span class="p">,</span>

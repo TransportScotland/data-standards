@@ -646,7 +646,7 @@
 <p>Data should be provided through use of a separate JSON file for each counter used in the survey. These files should be named in a manner such that it is easy to identify both the task order they relate to and the site that they each contain.</p>
 <h2 id="required-fields">Required Fields<a class="headerlink" href="#required-fields" title="Permanent link">&para;</a></h2>
 <h3 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h3>
-<p>In addition to the mandatory fields detailed in the <a href="../../data_formats/">Data Formats</a> page, there are three additional metadata fields required for every <abbr title="Automatic Traffic Count">ATC</abbr> site, each of which is detailed in the following sections.</p>
+<p>In addition to the mandatory fields detailed in the <a href="../../data_formats/">Data Formats</a> page, there are four additional metadata fields required for every <abbr title="Automatic Traffic Count">ATC</abbr> site, each of which is detailed in the following sections.</p>
 <table>
 <thead>
 <tr>
@@ -656,6 +656,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>site_id</td>
+<td>A unique identifier for this site within the task order</td>
+<td>ATC1</td>
+</tr>
 <tr>
 <td>location</td>
 <td>A location object, with specified keys.</td>
@@ -862,12 +867,14 @@
 <h2 id="example-structure">Example Structure<a class="headerlink" href="#example-structure" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;task_order&quot;</span><span class="p">:</span> <span class="s2">&quot;B26354&quot;</span><span class="p">,</span>
         <span class="nt">&quot;survey_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ATC&quot;</span><span class="p">,</span>
         <span class="nt">&quot;start_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01&quot;</span><span class="p">,</span>
         <span class="nt">&quot;end_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-11-01&quot;</span><span class="p">,</span>
         <span class="nt">&quot;collected_by&quot;</span><span class="p">:</span> <span class="s2">&quot;Tyrell Corporation&quot;</span><span class="p">,</span>
         <span class="nt">&quot;incidents&quot;</span><span class="p">:</span> <span class="p">[],</span>
         <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="nt">&quot;site_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ATC1&quot;</span><span class="p">,</span>
         <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Port Dundas Road, 50m South of junction with Milton St&quot;</span><span class="p">,</span>
             <span class="nt">&quot;eastings&quot;</span><span class="p">:</span> <span class="mi">259016</span><span class="p">,</span>
