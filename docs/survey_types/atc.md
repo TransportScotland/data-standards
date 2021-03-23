@@ -8,7 +8,7 @@ _Work in progress_
 Data should be provided at intervals not exceeding one hour in length, with 15 minute intervals generally recommended for data to be used in microsimulation modelling.
 
 ## Data Structure
-- One JSON file per counter
+Data should be provided through use of a separate JSON file for each counter used in the survey. These files should be named in a manner such that it is easy to identify both the task order they relate to and the site that they each contain.
 
 ## Required Fields
 
