@@ -489,12 +489,12 @@
                 
                   <h1>Data formats</h1>
                 
-                <h2 id="file-types">File Types</h2>
+                <h2 id="file-types">File Types<a class="headerlink" href="#file-types" title="Permanent link">&para;</a></h2>
 <p>The main storage format for survey data should be JSON. This format allows for storage of metadata directly alongside the survey data itself, ensuring that this information is not lost, and is easily read by machines.</p>
 <p>As JSON is less "human readable", in certain circumstances it may be beneficial to provide the data in Excel or CSV formats. If this is the case, this information should only ever be provided <strong>in addition to</strong> the JSON files, with clear information provided to the recipient that the JSON files are the primary format.</p>
-<h2 id="basic-structure-and-mandatory-fields">Basic Structure and Mandatory Fields</h2>
+<h2 id="basic-structure-and-mandatory-fields">Basic Structure and Mandatory Fields<a class="headerlink" href="#basic-structure-and-mandatory-fields" title="Permanent link">&para;</a></h2>
 <p>The exact structure will vary according to the type of survey undertaken, however some fields are required across all survey types.</p>
-<h3 id="mandatory-metadata-fields">Mandatory Metadata Fields</h3>
+<h3 id="mandatory-metadata-fields">Mandatory Metadata Fields<a class="headerlink" href="#mandatory-metadata-fields" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -536,7 +536,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="incidents">Incidents</h4>
+<h4 id="incidents">Incidents<a class="headerlink" href="#incidents" title="Permanent link">&para;</a></h4>
 <p>For the benefit of future users, any incidents occurring at or near the survey location which may have a material affect on the results must be included as part of the metadata for any and all relevant files.</p>
 <p>Incidents may include (but are not limited to):</p>
 <ul>
@@ -544,7 +544,7 @@
 <li>accidents</li>
 <li>roadworks</li>
 </ul>
-<h5 id="required-fields-for-incidents">Required Fields for Incidents</h5>
+<h5 id="required-fields-for-incidents">Required Fields for Incidents<a class="headerlink" href="#required-fields-for-incidents" title="Permanent link">&para;</a></h5>
 <p>Any incidents should be provided as a list of items, with each item containing the following fields:</p>
 <table>
 <thead>
@@ -573,14 +573,14 @@
 </tbody>
 </table>
 <p>Should no incidents occur, <strong>this key should still be included within the metadata, with an empty array as its corresponding value.</strong></p>
-<h4 id="errors">Errors</h4>
+<h4 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h4>
 <p>Any instances of failures in automated data collection or gaps in surveys must be included as part of the metadata for any and all relevant files, with both broadly fitting into the category of "errors".</p>
 <p>Errors could include:</p>
 <ul>
 <li>malfunctioning equipment</li>
 <li>obstructed or incomplete (e.g. for queue surveys) views for video footage</li>
 </ul>
-<h5 id="required-fields-for-errors">Required Fields for Errors</h5>
+<h5 id="required-fields-for-errors">Required Fields for Errors<a class="headerlink" href="#required-fields-for-errors" title="Permanent link">&para;</a></h5>
 <p>Any incidents should be provided as a list of items, with each item containing the following fields:</p>
 <table>
 <thead>
@@ -609,9 +609,9 @@
 </tbody>
 </table>
 <p>As with incidents, should no errors occur, <strong>this key should still be included within the metadata, with an empty array as its corresponding value.</strong></p>
-<h4 id="categorising-incidents-and-errors">Categorising Incidents and Errors</h4>
+<h4 id="categorising-incidents-and-errors">Categorising Incidents and Errors<a class="headerlink" href="#categorising-incidents-and-errors" title="Permanent link">&para;</a></h4>
 <p>The definitions of "incidents" and "errors" are broadly similar. As a rule of thumb, something should be classified as an incident if the actual <em>collection</em> of data has not been impacted but the data itself may have been. An error, on the other hand, broadly refers to anything that has prevented collection of data.</p>
-<h4 id="example">Example</h4>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">No incidents / errors</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
