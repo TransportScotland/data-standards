@@ -769,8 +769,8 @@
 </thead>
 <tbody>
 <tr>
-<td>class</td>
-<td>Vehicle class as used in the data.</td>
+<td>class_id</td>
+<td>Unique identifier to recognised the vehicle class, as used in the data. Should be an integer.</td>
 <td>1</td>
 </tr>
 <tr>
@@ -785,15 +785,15 @@
     <span class="nt">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;classifications&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Car&quot;</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LGV&quot;</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;HGV&quot;</span>
             <span class="p">}</span>
         <span class="p">]</span>
@@ -829,7 +829,7 @@
 </tbody>
 </table>
 <h4 id="counts">Counts<a class="headerlink" href="#counts" title="Permanent link">&para;</a></h4>
-<p>The reported counts include descriptions which should directly match up to the values as provided in the metadata.</p>
+<p>The reported counts include class identifiers which should directly match up to the values as provided in the metadata.</p>
 <p>It is also critical that <strong>observed counts of zero are included, and "unobserved" periods are not recorded as zero</strong>. The recipient of the data must be able to distinguish between gaps in the data (e.g. due to malfunctioning equipment) and actual periods with no observations.</p>
 <table>
 <thead>
@@ -846,8 +846,8 @@
 <td>NB</td>
 </tr>
 <tr>
-<td>class</td>
-<td>Vehicle class. Must match up with directions specified in the <a href="#classifications">metadata</a></td>
+<td>class_id</td>
+<td>Vehicle class ID. Must match up with directions specified in the <a href="#classifications">metadata</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -892,15 +892,15 @@
         <span class="p">],</span>
         <span class="nt">&quot;classifications&quot;</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                 <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Car&quot;</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                 <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;LGV&quot;</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                 <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;HGV&quot;</span>
             <span class="p">}</span>
         <span class="p">],</span>
@@ -912,32 +912,32 @@
             <span class="nt">&quot;counts&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">10</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">8</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">5</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;SB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">8</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;SB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">4</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;SB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
                 <span class="p">}</span>
             <span class="p">]</span>
@@ -948,32 +948,32 @@
             <span class="nt">&quot;counts&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">10</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">8</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">5</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;SB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">8</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;SB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">4</span>
                 <span class="p">},</span>
                 <span class="p">{</span>
                     <span class="nt">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;SB&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;class&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="nt">&quot;class_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                     <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span>
                 <span class="p">}</span>
             <span class="p">]</span>
