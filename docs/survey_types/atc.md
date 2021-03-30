@@ -79,10 +79,10 @@ Each direction used in the data should be detailed within the metadata, with bot
 
 The majority of ATC surveys require categorised vehicle counts. To avoid ambiguity, the categorisation methods used by the counter should be detailed as clearly as possible within this key. 
 
-| Field       | Description                        | Example |
-|-------------|------------------------------------|---------|
-| class       | Vehicle class as used in the data. | 1       |
-| description | Description of the class.          | Car     |
+| Field       | Description                                                                                   | Example |
+|-------------|-----------------------------------------------------------------------------------------------|---------|
+| class_id    | Unique identifier to recognised the vehicle class, as used in the data. Should be an integer. | 1       |
+| description | Description of the class.                                                                     | Car     |
 
 ##### Example
 ```json
@@ -90,15 +90,15 @@ The majority of ATC surveys require categorised vehicle counts. To avoid ambigui
     "metadata": {
         "classifications": [
             {
-                "class": 1,
+                "class_id": 1,
                 "description": "Car"
             },
             {
-                "class": 2,
+                "class_id": 2,
                 "description": "LGV"
             },
             {
-                "class": 3,
+                "class_id": 3,
                 "description": "HGV"
             }
         ]
@@ -118,15 +118,15 @@ Count data should be provided as an array with one entry per time period. Within
 
 #### Counts
 
-The reported counts include descriptions which should directly match up to the values as provided in the metadata.
+The reported counts include class identifiers which should directly match up to the values as provided in the metadata.
 
 It is also critical that **observed counts of zero are included, and "unobserved" periods are not recorded as zero**. The recipient of the data must be able to distinguish between gaps in the data (e.g. due to malfunctioning equipment) and actual periods with no observations.
 
-| Field     | Description                                                                                 | Example |
-|-----------|---------------------------------------------------------------------------------------------|---------|
-| direction | Direction of travel. Must match up with directions specified in the [metadata](#directions) | NB      |
-| class     | Vehicle class. Must match up with directions specified in the [metadata](#classifications)  | 1       |
-| count     | Number of vehicles recorded under the given parameters.                                     | 15      |
+| Field     | Description                                                                                   | Example |
+|-----------|-----------------------------------------------------------------------------------------------|---------|
+| direction | Direction of travel. Must match up with directions specified in the [metadata](#directions)   | NB      |
+| class_id  | Vehicle class ID. Must match up with directions specified in the [metadata](#classifications) | 1       |
+| count     | Number of vehicles recorded under the given parameters.                                       | 15      |
 
 
 ## Basic Checks
@@ -170,15 +170,15 @@ In most circumstances vehicle types relating to "cars" should provide the majori
         ],
         "classifications": [
             {
-                "class": 1,
+                "class_id": 1,
                 "description": "Car"
             },
             {
-                "class": 2,
+                "class_id": 2,
                 "description": "LGV"
             },
             {
-                "class": 3,
+                "class_id": 3,
                 "description": "HGV"
             }
         ],
@@ -190,32 +190,32 @@ In most circumstances vehicle types relating to "cars" should provide the majori
             "counts": [
                 {
                     "direction": "NB",
-                    "class": 1,
+                    "class_id": 1,
                     "count": 10
                 },
                 {
                     "direction": "NB",
-                    "class": 2,
+                    "class_id": 2,
                     "count": 8
                 },
                 {
                     "direction": "NB",
-                    "class": 3,
+                    "class_id": 3,
                     "count": 5
                 },
                 {
                     "direction": "SB",
-                    "class": 1,
+                    "class_id": 1,
                     "count": 8
                 },
                 {
                     "direction": "SB",
-                    "class": 2,
+                    "class_id": 2,
                     "count": 4
                 },
                 {
                     "direction": "SB",
-                    "class": 3,
+                    "class_id": 3,
                     "count": 2
                 }
             ]
@@ -226,32 +226,32 @@ In most circumstances vehicle types relating to "cars" should provide the majori
             "counts": [
                 {
                     "direction": "NB",
-                    "class": 1,
+                    "class_id": 1,
                     "count": 10
                 },
                 {
                     "direction": "NB",
-                    "class": 2,
+                    "class_id": 2,
                     "count": 8
                 },
                 {
                     "direction": "NB",
-                    "class": 3,
+                    "class_id": 3,
                     "count": 5
                 },
                 {
                     "direction": "SB",
-                    "class": 1,
+                    "class_id": 1,
                     "count": 8
                 },
                 {
                     "direction": "SB",
-                    "class": 2,
+                    "class_id": 2,
                     "count": 4
                 },
                 {
                     "direction": "SB",
-                    "class": 3,
+                    "class_id": 3,
                     "count": 2
                 }
             ]
